@@ -337,14 +337,7 @@ var _ = {
 	},
 
 	tokenize: function(text, grammar) {
-		var rest = grammar.rest;
-		if (rest) {
-			for (var token in rest) {
-				grammar[token] = rest[token];
-			}
-
-			delete grammar.rest;
-		}
+		grammar = handleRest(grammar);
 
 		var tokenList = new LinkedList();
 		addAfter(tokenList, tokenList.head, text);
@@ -431,6 +424,43 @@ Token.stringify = function stringify(o, language) {
 
 	return '<' + env.tag + ' class="' + env.classes.join(' ') + '"' + attributes + '>' + env.content + '</' + env.tag + '>';
 };
+
+/**
+ * This will inline the `rest` property of a grammar if it has one.
+ *
+ * The `rest` grammar may also have a `rest` property but cyclic (= self-referential) `rest` grammars are not allowed.
+ *
+ * Note: The given grammar will not be modified. The `rest` property will be inlined by creating a new temporary grammar
+ * object.
+ *
+ * @param {any} grammar
+ * @returns {any}
+ */
+function handleRest(grammar) {
+	if (grammar.hasOwnProperty('rest')) {
+		var rest = handleRest(grammar.rest || {});
+
+		var tempGrammar = {};
+		for (var name in grammar) {
+			if (grammar.hasOwnProperty(name)) {
+				if (name === 'rest') {
+					for (var restName in rest) {
+						if (rest.hasOwnProperty(restName)) {
+							if (restName !== 'rest') {
+								tempGrammar[restName] = rest[restName];
+							}
+						}
+					}
+				} else {
+					tempGrammar[name] = grammar[name];
+				}
+			}
+		}
+		return tempGrammar;
+	} else {
+		return grammar;
+	}
+}
 
 /**
  * @param {string} text
