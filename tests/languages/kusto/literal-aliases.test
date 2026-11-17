@@ -1,0 +1,28 @@
+date double int32 int64 time
+true True TRUE false False FALSE null
+trueValue TrueValue TRUE_VALUE falseValue FalseValue FALSE_VALUE
+MyFunction() _MyFunction()
+
+----------------------------------------------------
+
+[
+	["class-name", "date"],
+	["class-name", "double"],
+	["class-name", "int32"],
+	["class-name", "int64"],
+	["class-name", "time"],
+	["boolean", "true"],
+	["boolean", "True"],
+	["boolean", "TRUE"],
+	["boolean", "false"],
+	["boolean", "False"],
+	["boolean", "FALSE"],
+	["boolean", "null"],
+	"\r\ntrueValue TrueValue TRUE_VALUE falseValue FalseValue FALSE_VALUE\r\n",
+	["function", "MyFunction"],
+	["punctuation", "("],
+	["punctuation", ")"],
+	["function", "_MyFunction"],
+	["punctuation", "("],
+	["punctuation", ")"]
+]

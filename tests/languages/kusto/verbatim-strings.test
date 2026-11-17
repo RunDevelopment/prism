@@ -1,0 +1,16 @@
+@"say ""hello"" // still a string"
+@'it''s // still a string'
+h@"secret ""value"""
+H@'secret ''value'''
+@"first" "second"
+
+----------------------------------------------------
+
+[
+	["string", "@\"say \"\"hello\"\" // still a string\""],
+	["string", "@'it''s // still a string'"],
+	["string", "h@\"secret \"\"value\"\"\""],
+	["string", "H@'secret ''value'''"],
+	["string", "@\"first\""],
+	["string", "\"second\""]
+]

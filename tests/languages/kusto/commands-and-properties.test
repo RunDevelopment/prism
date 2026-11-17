@@ -1,0 +1,27 @@
+.show tables
+  .create-or-alter function MyFunction() { print x = 1 }
+.set-or-append Results <| print x = 1 <> 2
+print x = bag.property, y = "text".property
+| join hint.strategy=broadcast (Other) on Key
+
+----------------------------------------------------
+
+[
+	["command", ".show"], ["keyword", "tables"],
+	["command", ".create-or-alter"], " function ",
+	["function", "MyFunction"],
+	["punctuation", "("], ["punctuation", ")"],
+	["punctuation", "{"], ["keyword", "print"],
+	" x ", ["operator", "="], ["number", "1"], ["punctuation", "}"],
+	["command", ".set-or-append"], " Results ",
+	["operator", "<|"], ["verb", "print"], " x ", ["operator", "="],
+	["number", "1"], ["operator", "<>"], ["number", "2"],
+	["keyword", "print"], " x ", ["operator", "="], " bag",
+	["punctuation", "."], "property", ["punctuation", ","],
+	" y ", ["operator", "="], ["string", "\"text\""],
+	["punctuation", "."], "property\r\n",
+	["operator", "|"], ["verb", "join"],
+	" hint", ["punctuation", "."], "strategy", ["operator", "="], ["function", "broadcast"],
+	["punctuation", "("], "Other", ["punctuation", ")"],
+	["keyword", "on"], " Key"
+]
