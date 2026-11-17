@@ -4,8 +4,15 @@ Prism.languages.kusto = {
 		greedy: true
 	},
 	'string': {
-		pattern: /```[\s\S]*?```|[hH]?(?:"(?:[^\r\n\\"]|\\.)*"|'(?:[^\r\n\\']|\\.)*'|@(?:"[^\r\n"]*"|'[^\r\n']*'))/,
+		pattern: /```[\s\S]*?```|[hH]?(?:"(?:[^\r\n\\"]|\\.)*"|'(?:[^\r\n\\']|\\.)*'|@(?:"(?:[^\r\n"]|"")*"|'(?:[^\r\n']|'')*'))/,
 		greedy: true
+	},
+
+	'command': {
+		pattern: /(^[ \t]*)\.[a-z][a-z\d-]*\b/m,
+		lookbehind: true,
+		greedy: true,
+		alias: 'keyword'
 	},
 
 	'verb': {
@@ -14,16 +21,11 @@ Prism.languages.kusto = {
 		alias: 'keyword'
 	},
 
-	'command': {
-		pattern: /\.[a-z][a-z\d-]*\b/,
-		alias: 'keyword'
-	},
+	'class-name': /\b(?:bool|date|datetime|decimal|double|dynamic|guid|int|int32|int64|long|real|string|time|timespan)\b/,
+	'keyword': /\b(?:access|alias|and|anti|as|asc|auto|between|by|(?:contains|(?:ends|starts)with|has(?:prefix|suffix)?)(?:_cs)?|count|database|datatable|declare|desc|distinct|evaluate|extend|external|external_data|externaldata|facet|find|fork|from|fullouter|getschema|graph-match|graph-shortest-paths|graph-to-table|has_all|has_any|in~?|ingestion|inline|inner|innerunique|into|invoke|join|kind|(?:left|right)(?:anti(?:semi)?|inner|outer|semi)?|let|like|limit|local|lookup|macro-expand|make-graph|make-series|materialize|mv-apply|mv-expand|not|of|on|or|order|parse|parse-kv|parse-where|partition|pattern|print|project|project-away|project-keep|project-rename|project-reorder|query_parameters|range|reduce|render|restrict|sample|sample-distinct|scan|schema|search|serialize|set|sort|step|summarize|table|tables|take|to|top|top-hitters|top-nested|union|view|where|with|with_itemindex|withsource|matches\s+regex|nulls\s+(?:first|last))(?![\w-])/,
+	'boolean': /\b(?:FALSE|False|TRUE|True|false|null|true)\b/,
 
-	'class-name': /\b(?:bool|datetime|decimal|dynamic|guid|int|long|real|string|timespan)\b/,
-	'keyword': /\b(?:access|alias|and|anti|as|asc|auto|between|by|(?:contains|(?:ends|starts)with|has(?:perfix|suffix)?)(?:_cs)?|database|declare|desc|external|from|fullouter|has_all|in|ingestion|inline|inner|innerunique|into|(?:left|right)(?:anti(?:semi)?|inner|outer|semi)?|let|like|local|not|of|on|or|pattern|print|query_parameters|range|restrict|schema|set|step|table|tables|to|view|where|with|matches\s+regex|nulls\s+(?:first|last))(?![\w-])/,
-	'boolean': /\b(?:false|null|true)\b/,
-
-	'function': /\b[a-z_]\w*(?=\s*\()/,
+	'function': /\b[a-z_]\w*(?=\s*\()/i,
 
 	'datetime': [
 		{
@@ -39,6 +41,6 @@ Prism.languages.kusto = {
 	],
 	'number': /\b(?:0x[0-9A-Fa-f]+|\d+(?:\.\d+)?(?:[Ee][+-]?\d+)?)(?:(?:min|sec|[mnµ]s|[dhms]|microsecond|tick)\b)?|[+-]?\binf\b/,
 
-	'operator': /=>|[!=]~|[!=<>]=?|[-+*/%|]|\.\./,
+	'operator': /=>|<\||<>|[!=]~|[!=<>]=?|[-+*/%|]|\.\./,
 	'punctuation': /[()\[\]{},;.:]/
 };

@@ -1,0 +1,71 @@
+count datatable distinct evaluate extend externaldata external_data
+facet find fork getschema invoke join limit lookup
+macro-expand make-graph make-series materialize
+mv-apply mv-expand order parse parse-kv parse-where partition
+project project-away project-keep project-rename project-reorder
+reduce render sample sample-distinct scan search serialize sort
+summarize take top top-hitters top-nested union
+graph-match graph-shortest-paths graph-to-table
+kind with_itemindex withsource
+count_column graph-match-column
+
+----------------------------------------------------
+
+[
+	["keyword", "count"],
+	["keyword", "datatable"],
+	["keyword", "distinct"],
+	["keyword", "evaluate"],
+	["keyword", "extend"],
+	["keyword", "externaldata"],
+	["keyword", "external_data"],
+	["keyword", "facet"],
+	["keyword", "find"],
+	["keyword", "fork"],
+	["keyword", "getschema"],
+	["keyword", "invoke"],
+	["keyword", "join"],
+	["keyword", "limit"],
+	["keyword", "lookup"],
+	["keyword", "macro-expand"],
+	["keyword", "make-graph"],
+	["keyword", "make-series"],
+	["keyword", "materialize"],
+	["keyword", "mv-apply"],
+	["keyword", "mv-expand"],
+	["keyword", "order"],
+	["keyword", "parse"],
+	["keyword", "parse-kv"],
+	["keyword", "parse-where"],
+	["keyword", "partition"],
+	["keyword", "project"],
+	["keyword", "project-away"],
+	["keyword", "project-keep"],
+	["keyword", "project-rename"],
+	["keyword", "project-reorder"],
+	["keyword", "reduce"],
+	["keyword", "render"],
+	["keyword", "sample"],
+	["keyword", "sample-distinct"],
+	["keyword", "scan"],
+	["keyword", "search"],
+	["keyword", "serialize"],
+	["keyword", "sort"],
+	["keyword", "summarize"],
+	["keyword", "take"],
+	["keyword", "top"],
+	["keyword", "top-hitters"],
+	["keyword", "top-nested"],
+	["keyword", "union"],
+	["keyword", "graph-match"],
+	["keyword", "graph-shortest-paths"],
+	["keyword", "graph-to-table"],
+	["keyword", "kind"],
+	["keyword", "with_itemindex"],
+	["keyword", "withsource"],
+	"\r\ncount_column graph",
+	["operator", "-"],
+	"match",
+	["operator", "-"],
+	"column"
+]

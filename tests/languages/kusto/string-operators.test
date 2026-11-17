@@ -1,0 +1,33 @@
+hasprefix hasprefix_cs !hasprefix !hasprefix_cs
+has_any has_all
+in~ !in~ !between
+!contains !contains_cs !endswith !endswith_cs
+!has !has_cs !hassuffix !hassuffix_cs !startswith !startswith_cs
+hasperfix hasperfix_cs has_anything in_column hasprefix-column
+
+----------------------------------------------------
+
+[
+	["keyword", "hasprefix"],
+	["keyword", "hasprefix_cs"],
+	["operator", "!"], ["keyword", "hasprefix"],
+	["operator", "!"], ["keyword", "hasprefix_cs"],
+	["keyword", "has_any"],
+	["keyword", "has_all"],
+	["keyword", "in~"],
+	["operator", "!"], ["keyword", "in~"],
+	["operator", "!"], ["keyword", "between"],
+	["operator", "!"], ["keyword", "contains"],
+	["operator", "!"], ["keyword", "contains_cs"],
+	["operator", "!"], ["keyword", "endswith"],
+	["operator", "!"], ["keyword", "endswith_cs"],
+	["operator", "!"], ["keyword", "has"],
+	["operator", "!"], ["keyword", "has_cs"],
+	["operator", "!"], ["keyword", "hassuffix"],
+	["operator", "!"], ["keyword", "hassuffix_cs"],
+	["operator", "!"], ["keyword", "startswith"],
+	["operator", "!"], ["keyword", "startswith_cs"],
+	"\r\nhasperfix hasperfix_cs has_anything in_column hasprefix",
+	["operator", "-"],
+	"column"
+]

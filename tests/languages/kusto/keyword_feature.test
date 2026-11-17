@@ -20,8 +20,8 @@ fullouter
 has
 has_all
 has_cs
-hasperfix
-hasperfix_cs
+hasprefix
+hasprefix_cs
 hassuffix
 hassuffix_cs
 in
@@ -94,8 +94,8 @@ with
 	["keyword", "has"],
 	["keyword", "has_all"],
 	["keyword", "has_cs"],
-	["keyword", "hasperfix"],
-	["keyword", "hasperfix_cs"],
+	["keyword", "hasprefix"],
+	["keyword", "hasprefix_cs"],
 	["keyword", "hassuffix"],
 	["keyword", "hassuffix_cs"],
 	["keyword", "in"],
